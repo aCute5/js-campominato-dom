@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body img{
+    width: 30%;
+    height: 100%;
+}
+body{
+    height: 100vh;
+}
+nav{
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    display: flex;
+    flex-basis: 40%;
+    align-items: center;
+
+}
+.plays{
+    flex-basis: 30%;
+    display: flex;
+    align-items: center;
+}
+.levels li{
+    display: inline;   
+}
+.level h5{
+    display: inline;
+}
+.container{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+
+}
+.grid{
+    width: 700px;
+    height: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    display: none;
+}
+.campominato{
+    background-color: salmon;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+   
+}
+.cells{
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: gold;
+    background-color: purple;
+
+    /* display: none; */
+    
+}
+.cellsnormal{
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    background-color: purple;
+    color: gold;
+
+    /* display: none; */
+    
+}
+.cellsshard{
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    background-color: purple;
+    color: condition
+    /* display: none; */
+    
+}
+.colored{
+    background-color: rgb(17, 0, 255);
+}
+.bomb{
+    background-color: red;
+}
+.show{
+    display: flex;
+}
+.hidden{
+    display: none;
+}
