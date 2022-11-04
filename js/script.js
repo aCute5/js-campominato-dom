@@ -7,41 +7,49 @@ const eleBtn = document.querySelector(".play")
 const eleRst = document.querySelector(".reset")
 const eleTitle = document.querySelector(".title");
 const arrBombs = []
-
+function getRandomInteger(min,max) {
+	return Math.floor(Math.random() * (max - min + 1) ) + min;
+}  
 
 
 eleBtn.addEventListener("click", function (){
     let eleLvl = document.querySelector(".level").value
     if (eleLvl == "easy" ) {
-        eleGrid.innerHTML = ""
+        for (let y = 1; y<= 16 ; y++){
+            let randomBomb
+            do{
+                randomBomb = getRandomInteger(1,100);
+            } while (arrBombs.includes(randomBomb))
+            arrBombs.push(randomBomb);
+     eleGrid.innerHTML = ""
         for (let i = 1; i <= 100 ; i++){    
             const eleCell = document.createElement("div");
             eleTitle.classList.add("hidden")
             eleCell.innerHTML += [i]
-            
             eleCell.classList.add("cells")
             eleGrid.append(eleCell)
             eleGrid.classList.add("show")
+            arrCell = document.querySelectorAll(".cells")
             eleCell.addEventListener("click", function (){
-                this.classList.toggle("colored")
+                
+                if (arrBombs.includes(i)) {
+                   this.classList.add("bomb")
+                   for(i=0; i<y; i++){
+                    arrCell[arrBombs[i]].classList.add("bomb")
+                    let eleLost = document.querySelector(.lost).classList.add("show")
+                    eleLost.innerHTML += 
+                   }
+                    
+               }else{
+                    this.classList.add("colored")
+                    arrSelected = document.querySelectorAll("colored")
+                }
             })
             
 } 
-for (let y = 1; y<= 16 ; y++){
-    let randomBomb
-    const eleBomb = document.querySelector(`<div></div>`);
-    do{
-        randomBomb = getRandomInteger(1,100);
-    } while (arrBombs.includes(randomBomb))
-    arrBombs.push(randomBomb);
-    if(arrBombs.includes(randomBomb)){
-        eleCell.classList.add("bomb")
-    }
 }
 
-function getRandomInteger(min,max) {
-	return Math.floor(Math.random() * (max - min + 1) ) + min;
-}        
+      
     }else if (eleLvl == "normal"){
         eleGrid.innerHTML = ""
         for (let i = 1; i <= 81 ; i++){

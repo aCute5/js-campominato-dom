@@ -101,6 +101,9 @@ nav{
 .bomb{
     background-color: red;
 }
+.lost{
+    display: none;
+}
 .show{
     display: flex;
 }
